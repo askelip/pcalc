@@ -13,6 +13,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(Environment $twig, TaskRepository $taskRepository): Response
     {
+        // TODO prebaked HTML page
         return new Response($twig->render('home/index.html.twig', [
             'tasks' => $taskRepository->findAll(),
         ]));

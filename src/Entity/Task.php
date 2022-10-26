@@ -4,8 +4,13 @@ namespace App\Entity;
 
 use App\Repository\TaskRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
 
 #[ORM\Entity(repositoryClass: TaskRepository::class)]
+#[ApiResource(operations: [
+    new GetCollection()
+])]
 class Task
 {
     #[ORM\Id]

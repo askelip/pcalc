@@ -3,9 +3,27 @@
 {% block title %}Parent Task Calculator{% endblock %}
 
 {% block body %}
-    <h2>Tasks By Routine</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h2>Tasks By Routine</h2>
+                <button type="button" class="btn btn-primary">Fill Your Day!</button>
+                <ul class="list-group">
+                {% for task in tasks %}
+                    <li class="list-group-item">{{ task }}</li>
+                {% endfor %}
+                </ul>
 
-    {% for task in tasks %}
-        <h4>{{ task }}</h4>
-    {% endfor %}
+            </div>
+            <div class="col-sm">
+                <h2>Your Day</h2>
+                <table class="table">
+                    <tr><td>Morning</td></tr>
+                    <tr><td>Noon</td></tr>
+                    <tr><td>Afternoon</td></tr>
+                    <tr><td>Evening</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}

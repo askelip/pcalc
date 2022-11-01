@@ -12,7 +12,7 @@ If you'd like to run this project on your computer, you must install docker, php
 
 To copy the project's files, git clone it.
 ```bash
-git clone https://github.com/jellyfin/jellyfin.git
+git clone https://github.com/askelip/pcalc.git
 ```
 
 ```bash
@@ -24,7 +24,7 @@ Run docker compose command inside the project's directory to create the database
 ```bash
 docker-compose up -d --build
 ```
-When the container finishes building and displays the message "ready for connections",
+When the container finishes building,
 run database migrations
 ```bash
 symfony console doctrine:migrations:migrate
@@ -48,3 +48,4 @@ The following will need to be implemented for full functionality:
 - Currently, if the user selects all tasks and fill their day, a simple message is displayed. This logic is done on the frontend, but I have in plan a complex business logic for this which will be implemented on the backend as an API.
 - Allow the user to store their current daily routine schedule and access it by a unique URL.
 - Remove unused bundles installed as a part of the webapp installation in Symfony. I'm leaving them in the project for now as I'm not sure which one I'll use.
+- Add tests

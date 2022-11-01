@@ -12,7 +12,7 @@ If you'd like to run this project on your computer, you must install docker, php
 
 To copy the project's files, git clone it.
 ```bash
-git clone https://github.com/askelip/pcalc.git
+git clone git@github.com:askelip/pcalc.git
 ```
 
 ```bash

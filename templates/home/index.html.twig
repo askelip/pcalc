@@ -4,24 +4,34 @@
 
 {% block body %}
     <div class="container">
-        <div class="row">
+        <div class="row" data-controller="pcalc">
             <div class="col-sm">
-                <h2>Tasks By Routine</h2>
-                <button type="button" class="btn btn-primary">Fill Your Day!</button>
-                <ul class="list-group">
-                {% for task in tasks %}
-                    <li class="list-group-item">{{ task }}</li>
-                {% endfor %}
-                </ul>
-
+                <div>
+                <label class="form-label">Tasks By Routine
+                    <div id="desc" class="form-text">
+                        Some explanation...
+                    </div>
+                    <select name="tasks" multiple size="20" class="form-select" multiple aria-label="multiple select example" data-pcalc-target="tasks">
+                        {% for task in tasks %}
+                            <option value="{{ task.id }}" data-task-id-value="{{ task.id }}" data-task-name-value="{{ task.name }}" data-task-routine-name-value="{{ task.routine.name }}" data-task-routine-id-value="{{ task.routine.id }}" data-task-duration-value="{{ task.durationminutes }}">{{ task.name }} ({{ task.routine.name }}, {{ task.durationminutes }}m)</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <button type="button" data-action="click->pcalc#fill" class="btn btn-primary">Fill Your Day!</button>
+                </div>
+                <div data-pcalc-target="message"></div>
             </div>
             <div class="col-sm">
                 <h2>Your Day</h2>
-                <table class="table">
-                    <tr><td>Morning</td></tr>
-                    <tr><td>Noon</td></tr>
-                    <tr><td>Afternoon</td></tr>
-                    <tr><td>Evening</td></tr>
+                <table class="table" id="daily_routine" data-pcalc-target="table">
+                    <thead>
+                        <tr scope="col">
+                            <th>Routine</th>
+                            <th>Task Name</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody data-pcalc-target="tbody"></tbody>
                 </table>
             </div>
         </div>

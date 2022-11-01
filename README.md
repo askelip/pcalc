@@ -48,4 +48,5 @@ The following will need to be implemented for full functionality:
 - Currently, if the user selects all tasks and fill their day, a simple message is displayed. This logic is done on the frontend, but I have in plan a complex business logic for this which will be implemented on the backend as an API.
 - Allow the user to store their current daily routine schedule and access it by a unique URL.
 - Remove unused bundles installed as a part of the webapp installation in Symfony. I'm leaving them in the project for now as I'm not sure which one I'll use.
-- Add tests
+- Add php-fpm container and migrations setup to docker-compose.
+- Add tests.
